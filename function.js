@@ -11,7 +11,7 @@ const AWS = require('aws-sdk');
 
 require('dotenv').config();
 
-const spacesEndpoint = new AWS.Endpoint('nyc3.digitaloceanspaces.com'); 
+const spacesEndpoint = new AWS.Endpoint(process.env.DIGITAL_OCEAN_SPACE_ENDPOINT); 
 const s3 = new AWS.S3({
     endpoint: spacesEndpoint,
     accessKeyId: process.env.ACCESS_KEY_ID,
