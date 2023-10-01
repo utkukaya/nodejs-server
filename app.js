@@ -12,6 +12,8 @@ const upload = multer({ storage: storage });
 
 const app = express();
 const ipAddress = '192.168.1.185'
+app.timeout = 300000;
+
 app.use(cors());
 app.use(fileUpload());
 
@@ -20,6 +22,8 @@ const port = process.env.PORT || 5001;
 
 app.post('/uploadFile', UploadFile);
 
-app.listen(port, ipAddress, () => {
-    console.log(`Server is running on http://${ipAddress}:${port}`);
-});
+app.listen(port, () => console.log("server is running on ", port))
+
+// app.listen(port, ipAddress, () => {
+//     console.log(`Server is running on http://${ipAddress}:${port}`);
+// });
