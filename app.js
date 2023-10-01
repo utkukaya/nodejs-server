@@ -12,7 +12,7 @@ const upload = multer({ storage: storage });
 
 const app = express();
 const ipAddress = '192.168.1.185'
-app.timeout = 300000;
+app.timeout = 600000;
 
 app.use(cors());
 app.use(fileUpload());
